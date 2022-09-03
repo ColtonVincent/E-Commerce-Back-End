@@ -2,11 +2,23 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Category extends Model {}
+class Category extends Model { }
 
 Category.init(
   {
+      // Worked with Scott Casey, Jerrod Linderman, and Kyle Larsen in a group to come up with columns.
     // define columns
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false
+    },
+    category_name: {
+      type: dataTypes.STRING,
+      allowNull: false
+    }
+
   },
   {
     sequelize,
@@ -18,3 +30,5 @@ Category.init(
 );
 
 module.exports = Category;
+
+
